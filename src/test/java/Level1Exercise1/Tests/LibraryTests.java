@@ -16,18 +16,19 @@ public class LibraryTests {
         assertNotNull(library.getBooks());
     }
 
-    private void addthreebooks(Library library)
+    private Library addthreebooks(Library library)
     {
         library.addBook(new Book("Titol","Descripcio"));
         library.addBook(new Book("Titol2","Descripcio2"));
         library.addBook(new Book("Titol3","Descripcio3"));
+        return library;
     }
 
     @Test
     public void booksizecorrect()
     {
         Library library = new Library();
-        addthreebooks(library);
+        library = addthreebooks(library);
         assertTrue(3==library.getBooks().size());
     }
 
@@ -36,7 +37,7 @@ public class LibraryTests {
     {
         boolean correct = true;
         Library library = new Library();
-        addthreebooks(library);
+        library = addthreebooks(library);
         int size = library.getBooks().size();
         List<Book> books = library.getBooks();
         assertTrue(books.get(size-1).getName().equals("Titol3") && books.get(size-2).getName().equals("Titol2") && books.get(size-3).getName().equals("Titol"));
@@ -46,7 +47,7 @@ public class LibraryTests {
     public void bookTitleCorrect()
     {
         Library library = new Library();
-        addthreebooks(library);
+        library = addthreebooks(library);
         assertTrue(library.getBookTitle(library.getBooks().size()-2).equals(library.getBooks().get(library.getBooks().size()-2).getName()));
     }
 
@@ -54,7 +55,7 @@ public class LibraryTests {
     public void addBookPosition()
     {
         Library library = new Library();
-        addthreebooks(library);
+        library = addthreebooks(library);
         List<Book> original = library.getBooks();
         int position = 1;
         library.addBookInPosition(new Book("Second book","Description"),position);;
@@ -114,7 +115,7 @@ public class LibraryTests {
     public void deleteBookTitle()
     {
         Library library = new Library();
-        addthreebooks(library);
+        library = addthreebooks(library);
         int oldsize = library.getBooks().size();
         library.deleteBookByTitle("Titol2");
         assertTrue(library.getBooks().size() == oldsize - 1);
@@ -124,7 +125,7 @@ public class LibraryTests {
     public void alphabeticTest()
     {
         Library library = new Library();
-        addthreebooks(library);
+        library = addthreebooks(library);
         List<Book> original = new ArrayList<>(library.getBooks());
         List<Book> ordered = library.getBooksOrderedByTitle();
         //We check that the list is ordered correctly
@@ -179,8 +180,9 @@ public class LibraryTests {
     public void notAllowDuplicates()
     {
         Library library = new Library();
-        addthreebooks(library);
+        library = addthreebooks(library);
         //I add a repeted book
+
         library.addBook(new Book("Titol2","Descripcio2"));
 
         //I check the book was added two times

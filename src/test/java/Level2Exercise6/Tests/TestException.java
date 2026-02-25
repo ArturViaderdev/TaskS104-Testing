@@ -1,4 +1,4 @@
-package Level2Exercise6;
+package Level2Exercise6.Tests;
 
 import org.junit.jupiter.api.Test;
 

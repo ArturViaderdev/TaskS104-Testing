@@ -49,3 +49,9 @@ I checked an arrayindexofbounds exception.
 ### Exercise 7
 
 I checked that an Optional is empty.
+
+## Level 3
+
+### Exercise 1
+
+I'm done tests for testing a calculator class

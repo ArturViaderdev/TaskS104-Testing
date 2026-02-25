@@ -8,7 +8,7 @@ public class CheckIntegers {
     {
         int i = 2;
         int j = 2;
-        assertThat(i==j);
+        assertThat(i).isEqualTo(j);
     }
 
     @Test
@@ -16,6 +16,6 @@ public class CheckIntegers {
     {
         int i=2;
         int j = 3;
-        assertThat(i!=j);
+        assertThat(i).isNotEqualTo(j);
     }
 }

@@ -36,3 +36,16 @@ I checked that two integer arrays are equal or contain the same elements.
 
 ### Exercise 4
 
+I checked the inserted elements in an array.
+
+### Exercise 5
+
+I checked that a map contains a key.
+
+### Exercise 6
+
+I checked an arrayindexofbounds exception.
+
+### Exercise 7
+
+I checked that an Optional is empty.

@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.junit.Assert.assertSame;
+
 
 public class CheckReference {
     @Test
@@ -17,7 +17,7 @@ public class CheckReference {
     {
         List<Integer> a = new ArrayList<>();
         List<Integer> b = a;
-        Assertions.assertSame((Object) a, (Object) b);
+        assertThat(a).isSameAs(b);
     }
 
     @Test
@@ -25,6 +25,6 @@ public class CheckReference {
     {
         String a = new String("1");
         String b = new String("1");
-        Assertions.assertNotSame( a,b);
+        assertThat(a).isNotSameAs(b);
     }
 }

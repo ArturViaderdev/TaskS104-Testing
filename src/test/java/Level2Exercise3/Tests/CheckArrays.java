@@ -2,6 +2,7 @@ package Level2Exercise3.Tests;
 
 import org.junit.jupiter.api.Test;
 import org.testng.AssertJUnit;
+import static org.assertj.core.api.Assertions.assertThat;
 
 import java.util.ArrayList;
 
@@ -17,6 +18,6 @@ public class CheckArrays {
        b[0] = 1;
        b[1] = 2;
        b[2] = 3;
-       AssertJUnit.assertArrayEquals(a,b);
+       assertThat(a).isEqualTo(b);
     }
 }

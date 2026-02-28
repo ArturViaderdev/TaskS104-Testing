@@ -1,5 +1,52 @@
 # Task S1 04 Testing
 
+## Description
+This project was created for academic purposes as part of the IT Academy Java & Spring specialization.
+The goal is to do Junit tests.
+
+The project is structured in three levels of increasing complexity.
+
+## 🛠 Technologies
+- Java
+
+##    Project Structure
+````bash
+├── pom.xml
+├── README.md
+└── src
+    └── main
+        └── java
+            ├── level1Exercise1
+            │   ├── Book.java
+            │   ├── exceptions
+            │   │   └── NotFoundBookException.java
+            │   ├── Library.java
+            │   └── Main.java
+            ├── level1Exercise2
+            │   ├── CalculoDni.java
+            │   ├── exceptions
+            │   │   └── IncorrectNumberException.java
+            │   └── Main.java
+            ├── level1Exercise3
+            │   └── ListPosAccess.java
+            ├── level2Exercise1
+            ├── level2Exercise2
+            ├── level2Exercise3
+            ├── level2Exercise4
+            │   └── Data.java
+            ├── level2Exercise5
+            ├── level2Exercise6
+            ├── level2Exercise7
+            └── level3Exercise1
+                └── Calculator.java
+                
+````
+## 🚀 Instal.lation
+1. Clone the repository:
+````bash
+git clone https://github.com/ArturViaderdev/TaskS104-Testing
+````
+
 ## Level 1
 
 ### Exercise 1

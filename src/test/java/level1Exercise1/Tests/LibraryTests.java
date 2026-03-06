@@ -59,53 +59,33 @@ public class LibraryTests {
         List<Book> original = new ArrayList<>(library.getBooks());
         int position = 1;
         library.addBookInPosition(new Book("Second book","Description"),position);
-        int cont =0;
-        boolean exit = false;
         boolean correct = true;
-        while(!exit)
+        for(int count=0;count<library.getBooks().size();count++)
         {
-            if(cont<library.getBooks().size())
+            if(count<position)
             {
-                if(cont<position)
+                if(!(original.get(count).equals(library.getBooks().get(count))))
                 {
-                    if(!(original.get(cont).equals(library.getBooks().get(cont))))
-                    {
-                        exit = true;
-                        correct = false;
-                    }
-                    else
-                    {
-                        cont++;
-                    }
+
+                    correct = false;
+                    break;
                 }
-                else if(cont==position)
+            }
+            else if(count==position)
+            {
+                if(!(library.getBooks().get(count).getName().equals("Second book")))
                 {
-                    if(!(library.getBooks().get(cont).getName().equals("Second book")))
-                    {
-                        exit = true;
-                        correct = false;
-                    }
-                    else
-                    {
-                        cont++;
-                    }
-                }
-                else
-                {
-                    if(!(original.get(cont-1).equals(library.getBooks().get(cont))))
-                    {
-                        exit = true;
-                        correct = false;
-                    }
-                    else
-                    {
-                        cont++;
-                    }
+                    correct = false;
+                    break;
                 }
             }
             else
             {
-                exit = true;
+                if(!(original.get(count-1).equals(library.getBooks().get(count))))
+                {
+                    correct = false;
+                    break;
+                }
             }
         }
         assertTrue(correct);
@@ -136,49 +116,25 @@ public class LibraryTests {
         library = addThreeBooks(library);
         List<Book> original = new ArrayList<>(library.getBooks());
         List<Book> ordered = library.getBooksOrderedByTitle();
-        boolean sal = false;
+
         boolean correct = true;
-        int cont = 0;
-        while(!sal)
+        for(int count=0;count<ordered.size()-1;count++)
         {
-            if(cont<ordered.size()-1)
+            if(ordered.get(count+1).getName().compareTo(ordered.get(count).getName())<=0)
             {
-                if(ordered.get(cont+1).getName().compareTo(ordered.get(cont).getName())<=0)
-                {
-                    correct= false;
-                    sal = true;
-                }
-                else
-                {
-                    cont++;
-                }
+                correct= false;
+                break;
             }
-            else
-            {
-                sal = true;
-            }
-      }
+
+        }
         boolean modified = false;
-        sal = false;
-        cont=0;
-        while(!sal)
+        for(int count=0;count<original.size();count++)
         {
-           if(cont<original.size())
-           {
-               if(original.get(cont).equals(library.getBooks().get(cont)))
-               {
-                   cont++;
-               }
-               else
-               {
-                   sal = true;
-                   modified = true;
-               }
-           }
-           else
-           {
-               sal = true;
-           }
+            if(!(original.get(count).equals(library.getBooks().get(count))))
+            {
+                modified=true;
+                break;
+            }
         }
         assertTrue(correct && !modified);
     }

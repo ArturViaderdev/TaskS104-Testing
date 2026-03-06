@@ -116,7 +116,7 @@ public class LibraryTests {
     {
         Library library = new Library();
         library = addThreeBooks(library);
-        int oldsize = library.getBooks().size();
+        int oldSize = library.getBooks().size();
         try
         {
             library.deleteBookByTitle("Titol2");
@@ -125,7 +125,7 @@ public class LibraryTests {
         }
         finally
         {
-            assertEquals(library.getBooks().size(), oldsize - 1);
+            assertEquals(library.getBooks().size(), oldSize - 1);
         }
     }
 

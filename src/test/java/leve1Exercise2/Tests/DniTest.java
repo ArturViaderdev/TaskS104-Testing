@@ -26,14 +26,14 @@ public class DniTest {
             "-1,-",
             "100000000,-"
     })
-    public void dniTest(int number, char expectedletter) {
+    public void dniTest(int number, char expectedLetter) {
         boolean correct = true;
         char letter;
         try
         {
             letter = CalculoDni.letterDni(number);
             correct = true;
-            if (letter != expectedletter) {
+            if (letter != expectedLetter) {
                 correct = false;
             }
         } catch (Exception ex) {

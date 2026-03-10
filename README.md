@@ -41,11 +41,27 @@ The project is structured in three levels of increasing complexity.
                 └── Calculator.java
                 
 ````
-## 🚀 Instal.lation
+## 🚀 Instal.lation and execution
 1. Clone the repository:
 ````bash
 git clone https://github.com/ArturViaderdev/TaskS104-Testing
 ````
+2. Execute with maven:
+````
+cd TaskS104-Testing
+mvn clean test
+````
+You need the command mvn installed in the operating system.
+
+In linux based on debian you can install with:
+`````bash 
+sudo apt-get install maven
+`````
+In linux fedora:
+````bash
+sudo yum install maven
+````
+Or you can run the tests on IntelliJ IDEA.
 
 ## The goal
 

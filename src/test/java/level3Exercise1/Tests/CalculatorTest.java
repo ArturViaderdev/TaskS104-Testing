@@ -1,9 +1,9 @@
 package level3Exercise1.Tests;
 
 import level3Exercise1.Calculator;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-import static org.assertj.core.api.Assertions.*;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
 public class CalculatorTest {
@@ -11,7 +11,8 @@ public class CalculatorTest {
     void CalculatorStartsWithTotalZero()
     {
         Calculator calculator = new Calculator();
-        assertThat(calculator.getTotal()).isEqualTo(0);
+        Assertions.assertEquals(calculator.getTotal(),0);
+        //assertThat(calculator.getTotal()).isEqualTo(0);
     }
 
     @Test
@@ -20,7 +21,8 @@ public class CalculatorTest {
         Calculator calculator = new Calculator();
         double oldTotal = calculator.getTotal();
         calculator.add(2);
-        assertThat(calculator.getTotal()).isGreaterThan(oldTotal);
+        Assertions.assertTrue(calculator.getTotal()>oldTotal);
+        //assertThat(calculator.getTotal()).isGreaterThan(oldTotal);
     }
 
     @Test
@@ -29,7 +31,8 @@ public class CalculatorTest {
         Calculator calculator = new Calculator();
         double oldTotal = calculator.getTotal();
         calculator.subtract(2);
-        assertThat(calculator.getTotal()).isLessThan(oldTotal);
+        Assertions.assertTrue(calculator.getTotal()<oldTotal);
+        //assertThat(calculator.getTotal()).isLessThan(oldTotal);
     }
 
     @Test
@@ -38,7 +41,8 @@ public class CalculatorTest {
         Calculator calculator = new Calculator();
         calculator.add(2);
         calculator.multiply(3);
-        assertThat(calculator.getTotal()).isEqualTo(2*3);
+        Assertions.assertEquals(calculator.getTotal(),2*3);
+        //assertThat(calculator.getTotal()).isEqualTo(2*3);
     }
 
     @Test
@@ -47,7 +51,8 @@ public class CalculatorTest {
         Calculator calculator = new Calculator();
         calculator.add(9);
         calculator.divide(3);
-        assertThat(calculator.getTotal()).isEqualTo(9/3);
+        Assertions.assertEquals(calculator.getTotal(),9/3);
+        //assertThat(calculator.getTotal()).isEqualTo(9/3);
     }
 
     @Test
@@ -63,7 +68,8 @@ public class CalculatorTest {
         Calculator calculator = new Calculator();
         calculator.add(5);
         calculator.reset();
-        assertThat(calculator.getTotal()).isEqualTo(0);
+        Assertions.assertEquals(calculator.getTotal(),0);
+        //assertThat(calculator.getTotal()).isEqualTo(0);
     }
 
     @Test
@@ -73,6 +79,7 @@ public class CalculatorTest {
         calculator.add(1);
         calculator.add(1);
         calculator.add(1);
-        assertThat(calculator.getTotal()).isEqualTo(3);
+        Assertions.assertEquals(calculator.getTotal(),3);
+        //assertThat(calculator.getTotal()).isEqualTo(3);
     }
 }

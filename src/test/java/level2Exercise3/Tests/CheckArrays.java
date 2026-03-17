@@ -1,8 +1,7 @@
 package level2Exercise3.Tests;
 
 import org.junit.jupiter.api.Test;
-
-import static org.assertj.core.api.Assertions.assertThat;
+import org.junit.jupiter.api.Assertions;
 
 public class CheckArrays {
     @Test
@@ -16,6 +15,6 @@ public class CheckArrays {
        b[0] = 1;
        b[1] = 2;
        b[2] = 3;
-       assertThat(a).isEqualTo(b);
+       Assertions.assertArrayEquals(a,b);
     }
 }

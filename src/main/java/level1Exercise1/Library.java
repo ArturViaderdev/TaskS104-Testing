@@ -32,26 +32,13 @@ public class Library {
 
     public boolean existBook(Book book)
     {
-        boolean exit = false;
         boolean found = false;
-        int cont = 0;
-        while(!exit)
+        for(int cont=0;cont<books.size();cont++)
         {
-            if(cont<books.size())
+            if(book.equals(books.get(cont)))
             {
-                if(book.equals(books.get(cont)))
-                {
-                    found = true;
-                    exit = true;
-                }
-                else
-                {
-                    cont++;
-                }
-            }
-            else
-            {
-                exit = true;
+                found = true;
+                break;
             }
         }
         return found;
@@ -66,26 +53,14 @@ public class Library {
     }
 
     public void deleteBookByTitle(String title) throws NotFoundBookException {
-        int cont = 0;
-        boolean exit = false;
         boolean found = false;
-        while(!exit)
+        int cont =0;
+        for(cont=0;cont<books.size();cont++)
         {
-            if(cont<books.size())
+            if(books.get(cont).getName().equals(title))
             {
-                if(books.get(cont).getName().equals(title))
-                {
-                    found = true;
-                    exit = true;
-                }
-                else
-                {
-                    cont++;
-                }
-            }
-            else
-            {
-                exit = true;
+                found = true;
+                break;
             }
         }
         if(found)

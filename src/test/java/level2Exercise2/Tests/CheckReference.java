@@ -1,11 +1,9 @@
 package level2Exercise2.Tests;
 import org.junit.jupiter.api.Test;
-
-import static org.testng.AssertJUnit.assertSame;
-
+import org.junit.jupiter.api.Assertions;
 import java.util.ArrayList;
 import java.util.List;
-import static org.assertj.core.api.Assertions.assertThat;
+
 
 
 public class CheckReference {
@@ -14,7 +12,7 @@ public class CheckReference {
     {
         List<Integer> a = new ArrayList<>();
         List<Integer> b = a;
-        assertThat(a).isSameAs(b);
+        Assertions.assertSame(a,b);
     }
 
     @Test
@@ -22,6 +20,6 @@ public class CheckReference {
     {
         String a = new String("1");
         String b = new String("1");
-        assertThat(a).isNotSameAs(b);
+        Assertions.assertNotSame(a,b);
     }
 }

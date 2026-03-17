@@ -4,9 +4,7 @@ import org.junit.jupiter.api.Test;
 
 import java.util.HashMap;
 import java.util.Map;
-
-import static org.assertj.core.api.Assertions.assertThat;
-
+import org.junit.jupiter.api.Assertions;
 public class TestMap {
     @Test
     public void checkMap()
@@ -14,6 +12,7 @@ public class TestMap {
         Map<String,String> map = new HashMap<>();
         map.put("Spain","Madrid");
         map.put("France","Paris");
-        assertThat(map).containsKey("France");
+        Assertions.assertTrue(map.containsKey("France"));
+        //assertThat(map).containsKey("France");
     }
 }

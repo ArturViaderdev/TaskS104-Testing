@@ -2,19 +2,19 @@ package level1Exercise1.Tests;
 import level1Exercise1.Book;
 import level1Exercise1.Library;
 import level1Exercise1.exceptions.NotFoundBookException;
-import org.junit.Test;
+//import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
 import java.util.List;
-
-import static org.junit.Assert.*;
 
 public class LibraryTests {
     @Test
     public void testNotNullBooks()
     {
         Library library = new Library();
-        assertNotNull(library.getBooks());
+        Assertions.assertNotNull(library.getBooks());
     }
 
     private Library addThreeBooks(Library library)
@@ -30,7 +30,7 @@ public class LibraryTests {
     {
         Library library = new Library();
         library = addThreeBooks(library);
-        assertEquals(3, library.getBooks().size());
+        Assertions.assertEquals(3, library.getBooks().size());
     }
 
     @Test
@@ -40,7 +40,7 @@ public class LibraryTests {
         library = addThreeBooks(library);
         int size = library.getBooks().size();
         List<Book> books = library.getBooks();
-        assertTrue(books.get(size-1).getName().equals("Titol3") && books.get(size-2).getName().equals("Titol2") && books.get(size-3).getName().equals("Titol"));
+        Assertions.assertTrue(books.get(size-1).getName().equals("Titol3") && books.get(size-2).getName().equals("Titol2") && books.get(size-3).getName().equals("Titol"));
     }
 
     @Test
@@ -48,7 +48,7 @@ public class LibraryTests {
     {
         Library library = new Library();
         library = addThreeBooks(library);
-        assertEquals(library.getBookTitle(library.getBooks().size() - 2), library.getBooks().get(library.getBooks().size() - 2).getName());
+        Assertions.assertEquals(library.getBookTitle(library.getBooks().size() - 2), library.getBooks().get(library.getBooks().size() - 2).getName());
     }
 
     @Test
@@ -88,7 +88,7 @@ public class LibraryTests {
                 }
             }
         }
-        assertTrue(correct);
+        Assertions.assertTrue(correct);
     }
 
     @Test
@@ -105,7 +105,7 @@ public class LibraryTests {
         }
         finally
         {
-            assertEquals(library.getBooks().size(), oldSize - 1);
+            Assertions.assertEquals(library.getBooks().size(), oldSize - 1);
         }
     }
 
@@ -136,7 +136,7 @@ public class LibraryTests {
                 break;
             }
         }
-        assertTrue(correct && !modified);
+        Assertions.assertTrue(correct && !modified);
     }
 
     @Test
@@ -155,6 +155,6 @@ public class LibraryTests {
                 cont++;
             }
         }
-        assertEquals(1, cont);
+        Assertions.assertEquals(1, cont);
     }
 }

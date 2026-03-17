@@ -1,6 +1,6 @@
 package level2Exercise1.Tests;
 import org.junit.jupiter.api.Test;
-import static org.assertj.core.api.Assertions.assertThat;
+import org.junit.jupiter.api.Assertions;
 
 public class CheckIntegers {
     @Test
@@ -8,7 +8,7 @@ public class CheckIntegers {
     {
         int i = 2;
         int j = 2;
-        assertThat(i).isEqualTo(j);
+        Assertions.assertEquals(i,j);
     }
 
     @Test
@@ -16,6 +16,6 @@ public class CheckIntegers {
     {
         int i=2;
         int j = 3;
-        assertThat(i).isNotEqualTo(j);
+        Assertions.assertNotSame(i,j);
     }
 }
